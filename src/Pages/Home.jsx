@@ -1,6 +1,9 @@
 import { ArrowRightLongLine } from "../Components/Icons/Arrow-right-long-line";
 import pizzaImage from '../assets/Images/pizza2.png';
 import cookingImage from '../assets/Images/cooking1.png';
+import OrderFoodImg from '../assets/Images/orderFood.png';
+import PickupFoodImg from '../assets/Images/pickup.png';
+import EnjoyFoodImg from '../assets/Images/enjoy.png';
 import { PatchCheck } from "../Components/Icons/patch-check";
 
 function Home(){
@@ -71,7 +74,13 @@ function Home(){
                     <div className="w-full p-1" >
                         <div className="flex items-center h-full p-2 pl-0 text-2xl rounded">
                         <PatchCheck className="text-base leading-relaxed text-[#6B7280] h-9 w-9 mr-2" />
-                        <span> Perfect taste</span>
+                        <span> Great food</span>
+                        </div>
+                    </div>
+                    <div className="w-full p-1" >
+                        <div className="flex items-center h-full p-2 pl-0 text-2xl rounded">
+                        <PatchCheck className="text-base leading-relaxed text-[#6B7280] h-9 w-9 mr-2" />
+                        <span> Great taste</span>
                         </div>
                     </div>
                     <div className="w-full p-1" >
@@ -86,6 +95,68 @@ function Home(){
                         <span>Hygenic food guaranteed</span>
                         </div>
                     </div>
+                    <div className="px-5 py-4 mx-auto" >
+                        <div className="flex justify-center py-4" >
+
+                            <div className="inline-flex w-16 h-1 bg-yellow-500 rounded-full"></div>
+
+                        </div>
+
+                        <div className="flex flex-wrap space-y-6 md:space-y-0" >
+
+                            <div className="flex flex-col items-center text-center p-4 md:w-1/3">
+                                <div className="inline-flex items-center justify-center flex-shrink-0 w-20 h-20 mb-5 bg-yellow-100 rounded-full" >
+                                    <img
+                                        src={OrderFoodImg}
+                                    />
+                                </div>
+                                <div className="flex-grow" >
+                                    <h2 className="mb-3 text-lg font-medium text-gray-900 title-font" >
+                                        Order Food
+                                    </h2>
+                                    <p className="text-base leading-relaxed" >
+                                        As easy as 1, 2, 3, just select your favourite pizza and place your order.
+                                    </p>
+                                </div>
+
+                            </div>
+                            <div className="flex flex-col items-center text-center p-4 md:w-1/3">
+                                <div className="inline-flex items-center justify-center flex-shrink-0 w-20 h-20 mb-5 bg-yellow-100 rounded-full" >
+                                    <img
+                                        src={PickupFoodImg}
+                                    />
+                                </div>
+                                <div className="flex-grow" >
+                                    <h2 className="mb-3 text-lg font-medium text-gray-900 title-font" >
+                                        Pickup Food
+                                    </h2>
+                                    <p className="text-base leading-relaxed" >
+                                       Pick up your order from the nearest store or get it delivered to your doorstep.
+                                    </p>
+                                </div>
+
+                            </div>
+                            <div className="flex flex-col items-center text-center p-4 md:w-1/3">
+                                <div className="inline-flex items-center justify-center flex-shrink-0 w-20 h-20 mb-5 bg-yellow-100 rounded-full" >
+                                    <img
+                                        src={EnjoyFoodImg}
+                                    />
+                                </div>
+                                <div className="flex-grow" >
+                                    <h2 className="mb-3 text-lg font-medium text-gray-900 title-font" >
+                                        Enjoy Food
+                                    </h2>
+                                    <p className="text-base leading-relaxed" >
+                                        As soon as you get your order, enjoy the delicious pizza with your loved ones.
+                                    </p>
+                                </div>
+
+                            </div>
+                            
+                        </div>
+
+                    </div>
+
                 </div>
             </div>
         </section>
