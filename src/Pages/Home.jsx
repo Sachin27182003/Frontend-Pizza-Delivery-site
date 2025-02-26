@@ -1,5 +1,5 @@
 import { ArrowRightLongLine } from "../Components/Icons/Arrow-right-long-line";
-import pizzaImage from '../assets/Images/pizza2.png';
+import pizzaImage2 from '../assets/Images/pizza2.png';
 import cookingImage from '../assets/Images/cooking1.png';
 import OrderFoodImg from '../assets/Images/orderFood.png';
 import PickupFoodImg from '../assets/Images/pickup.png';
@@ -39,7 +39,7 @@ function Home(){
 
             <div>
                 <img
-                    src={pizzaImage}
+                    src={pizzaImage2}
                     alt="pizza"
                     height={550}
                     width={400}
@@ -160,6 +160,7 @@ function Home(){
                 </div>
             </div>
         </section>
+        
         </div>
     )
 
