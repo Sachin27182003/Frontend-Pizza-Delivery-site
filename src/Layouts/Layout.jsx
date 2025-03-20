@@ -1,5 +1,4 @@
 import Footer from "../Components/Footer";
-import Home from "../Pages/Home";
 import PizzaImage1 from '../assets/Images/pizza1.png';
 
 function Layout({ children }) {
@@ -8,7 +7,7 @@ function Layout({ children }) {
       <nav className="flex items-center justify-around h-16 text-[#6B7280] font-mono border-none shadow-md ">
 
         <div className="flex items-center justify-center">
-            <img src={PizzaImage1} alt="Pizza logo" />
+            <img className="w-[65px] h-[65px]" src={PizzaImage1} alt="Pizza logo" />
             <p>Pizza Site</p>
         </div>
         <div className="hidden md:block">
@@ -20,7 +19,7 @@ function Layout({ children }) {
 
                 </li>
                 <li className="hover:text-[#FF9110]">
-                    { '    ' }
+                    { '    ' } 
                     <p > Services </p>
 
                 </li>
@@ -36,7 +35,7 @@ function Layout({ children }) {
 
       </nav>
 
-      <Home />
+      {children}
 
     <div className="w-full h-1"></div>  
     <footer className="w-full h-1">

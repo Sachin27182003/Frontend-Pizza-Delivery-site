@@ -5,11 +5,13 @@ import OrderFoodImg from '../assets/Images/orderFood.png';
 import PickupFoodImg from '../assets/Images/pickup.png';
 import EnjoyFoodImg from '../assets/Images/enjoy.png';
 import { PatchCheck } from "../Components/Icons/patch-check";
+import Layout from "../Layouts/Layout";
 
 function Home(){
 
     return (
-        <div>
+        <Layout>
+            <div>
             {/* Hero Section */}
         <section className="flex flex-col-reverse items-center justify-center py-5 md:flex-row md:gap-7 bg-gradient-to-r from-amber-50 to-orange-300">
                                                                {/* justify-center */}
@@ -161,7 +163,8 @@ function Home(){
             </div>
         </section>
         
-        </div>
+            </div>
+        </Layout>
     )
 
 }
