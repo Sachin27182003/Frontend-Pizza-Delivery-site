@@ -1,8 +1,14 @@
 import { useState } from 'react';
 import toast from 'react-hot-toast';
 import SignupPresentation from './SignupPresentation';
+import { useDispatch } from 'react-redux';
+import { createAccount } from '../../Redux/Slices/AuthSlice';
+import { useNavigate } from 'react-router-dom';
 
 function Signup(){
+
+    const dispatch = useDispatch();
+    const navigator = useNavigate();
 
     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
     const mobileNumberRegex = /^(?:\+91|91)?[6-9]\d{9}$/;
@@ -10,7 +16,8 @@ function Signup(){
 
     
     const [signUpState, setSignUpState] = useState({
-        name: '',
+        firstName: '',
+        lastName: '',
         email: '',
         mobileNumber: '',
         password: ''
@@ -39,13 +46,30 @@ function Signup(){
             
     }
 
-    function handleFormSubmit(e){
+    async function handleFormSubmit(e){
         e.preventDefault();  //prevent the form from reloading the page;
 
         if(validation()){
-        toast.success("Account created successfully");
-        console.log(signUpState);
+
+            const apiResponse = await dispatch(createAccount(signUpState));
+            console.log("apiresponse",apiResponse);
+
+            if(apiResponse.payload.success){
+                navigator('/auth/signin');
+            } else if (apiResponse.payload.error.statusCode === 409){
+
+                const loadingToast =toast.loading("Redirecting to Signin Page", {
+                                            style: {color: 'green'}
+                                        })
+                
+                setTimeout(()=>{
+                    navigator('/auth/signin');
+                    toast.dismiss(loadingToast);
+                }, 2000);
+            }
         }
+
+       
     }
     
     return (

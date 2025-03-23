@@ -1,11 +1,13 @@
 import { Link } from "react-router-dom";
+import Layout from "../../Layouts/Layout";
 
 function SignupPresentation({ handleFormSubmit, handleUserInput}) {
 
     return (
         <>
-            <section className="text-gray-600 body-font">
-                <div className = "flex flex-wrap items-center h-screen px-10 py-6 mx-auto">
+        <Layout>
+            <section className="text-gray-600 lg:h-[850px] md:h-[1500px] body-font">
+                <div className = "flex flex-wrap items-center px-10 py-6 mx-auto">
                     <div className="hidden pr-0 lg:w-3/5 md:w-1/2 md:pr-16 lg:pr-0 md:block">
                         <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -152,15 +154,26 @@ function SignupPresentation({ handleFormSubmit, handleUserInput}) {
                         <h2 className="mb-5 text-3xl font-bold text-gray-900 title-font ">Sign Up</h2>
 
                         <div className="relative mb-4">
-                            <label htmlFor="name" className="text-sm leading-7 text-gray-600 " >Name <span className="text-red-600">*</span></label>
+                            <label htmlFor="firstName" className="text-sm leading-7 text-gray-600 " >First Name <span className="text-red-600">*</span></label>
                             <input 
                                 type="text" 
-                                id="name" 
-                                name="name"
+                                id="firstName" 
+                                name="firstName"
                                 required
                                 minLength={2}
                                 onChange={handleUserInput}
-                                placeholder="John Doe"
+                                placeholder="John"
+                                className="w-full px-3 py-1 mt-2 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out border border-gray-300 rounded outline-none focus:border-yellow-500 focus-ring-2 focus:ring-yellow-200" />
+                        </div>
+                        <div className="relative mb-4">
+                            <label htmlFor="lastName" className="text-sm leading-7 text-gray-600 " >Last Name </label>
+                            <input 
+                                type="text" 
+                                id="lastName" 
+                                name="lastName"
+                                minLength={2}
+                                onChange={handleUserInput}
+                                placeholder="Doe"
                                 className="w-full px-3 py-1 mt-2 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out border border-gray-300 rounded outline-none focus:border-yellow-500 focus-ring-2 focus:ring-yellow-200" />
                         </div>
                         <div className="relative mb-4">
@@ -187,6 +200,19 @@ function SignupPresentation({ handleFormSubmit, handleUserInput}) {
                                 className="w-full px-3 py-1 mt-2 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out border border-gray-300 rounded outline-none focus:border-yellow-500 focus-ring-2 focus:ring-yellow-200" />
                         </div>
                         <div className="relative mb-4">
+                            <label htmlFor="role" className="text-sm leading-7 text-gray-600 ">Role<span className="text-red-600">*</span></label>
+                            <select
+                                required
+                                id="role" 
+                                name="role"
+                                defaultValue="USER"
+                                className="w-full font-normal px-3 py-2 mt-2 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out border border-gray-300 rounded outline-none focus:border-yellow-500 focus-ring-2 focus:ring-yellow-200" 
+                            >
+                                <option value="USER">Customer</option>
+                                <option value="ADMIN">Seller</option>
+                            </select>
+                        </div>
+                        <div className="relative mb-4">
                             <label htmlFor="password" className="text-sm leading-7 text-gray-600 "> Password <span className="text-red-600">*</span></label>
                             <input 
                                 type="password" 
@@ -196,7 +222,7 @@ function SignupPresentation({ handleFormSubmit, handleUserInput}) {
                                 placeholder="**********"
                                 onChange={ handleUserInput }
                                 className="w-full px-3 py-1 mt-2 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out border border-gray-300 rounded outline-none focus:border-yellow-500 focus-ring-2 focus:ring-yellow-200" />
-                                <p className="text-xs text-blue-500 m-2">Password must contain at least 8 characters, including uppercase, lowercase, number, and special character.</p>
+                                <p className="text-sm text-blue-500 m-2">Password must contain at least 8 characters, including uppercase, lowercase, number, and special character.</p>
                         </div>
 
                         <button className="w-full px-8 py-2 text-lg text-white bg-yellow-500 border-0 rounded focus:outline-none hover:bg-yellow-600">Sign up</button>
@@ -207,6 +233,8 @@ function SignupPresentation({ handleFormSubmit, handleUserInput}) {
                 </div>  
 
             </section>
+        </Layout>
+            
         </>
     ) 
 }

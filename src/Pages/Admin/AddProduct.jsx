@@ -10,12 +10,12 @@ function AddProduct() {
                         <img className="w-[500px] h-auto" src={AddProductSVG} alt="Add Product"/>
                     </div>
 
-                    <div className="w-full md:w-1/2 max-w-md mr-15 bg-white p-7 shadow-md rounded-lg">
-                        <h2 className="mb-4 text-2xl font-semibold ">Add product</h2>
+                    <div className="w-full md:w-1/2 max-w-md mr-10 bg-gray-100 p-7 shadow-md rounded-lg">
+                        <h2 className="mb-4 text-3xl font-bold ">Add product</h2>
 
                         <form>
                             {/* Product name */}
-                            <div className="mb-4">
+                            <div className="mb-4 ">
                                 <label htmlFor="productName" className="block text-sm font-medium text-gray-700">Product Name<span className="text-red-500" >*</span></label>
                                 <input 
                                     type="text" 
