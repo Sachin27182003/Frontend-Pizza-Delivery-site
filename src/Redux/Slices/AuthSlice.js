@@ -10,7 +10,7 @@ try {
 }
 
 const initialState = {
-    isLoggedIn: localStorage.getItem('isLoggedIn') === 'true',
+    isLoggedIn: localStorage.getItem('isLoggedIn') === 'true' || false,
     role: localStorage.getItem('role') || '',
     data: parsedData, 
 };
