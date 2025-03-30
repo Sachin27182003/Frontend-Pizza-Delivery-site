@@ -48,7 +48,7 @@ export const createAccount = createAsyncThunk('/auth/createAccount', async (data
 export const login = createAsyncThunk('/auth/login', async (data) => {
 
     try {
-        const response = axiosInstance.post('/auth/login', data);
+        const response = axiosInstance.post('/auth/login', data, { withCredentials: true });
         toast.promise(response, {
             success: (resolvedPromise) => {
                 return resolvedPromise?.data?.message;
