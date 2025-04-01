@@ -50,8 +50,8 @@ function Home() {
               </h1>
               <h1>😋</h1>
             </div>
-            <p className=" pb-4 text-[#6B7280] ">
-              The Pizza site lets you order your favourite pizza from the
+            <p className=" pb-4 text-left text-[#6B7280] ">
+              The Pizza site lets you order your favourite pizza <br />from the
               comfort of your home. <br /> Enjoy the best pizza in your town
               with just one click!
             </p>

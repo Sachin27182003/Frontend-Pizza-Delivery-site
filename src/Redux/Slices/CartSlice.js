@@ -45,7 +45,6 @@ export const removeProductFromCart = createAsyncThunk(
       return apiResponse?.data;
     } catch (error) {
       console.log(error);
-      toast.error("Something went wrong");
     }
   }
 );
@@ -56,25 +55,22 @@ export const getAllProductFromCarts = createAsyncThunk("/cart/getAllProductFromC
       const products = axiosInstance.get(`/carts`);
 
       toast.promise(products, {
-        success: "Product Fetched Successfully",
-        loading: "Fetching Product from cart",
-        error: "Something went wrong, please try again later",
+        success: "",
+        loading: "",
+        error: "",
       });
 
       const apiResponse = await products;
       return apiResponse?.data;
 
     } catch (error) {
-      console.log("Error:", error);
 
       // Handle specific error
       if (error?.response?.data?.message === "Invalid token provided") {
         await dispatch(logout());
         toast.error("session expired, Please login again");
       }
-
-      toast.error("Something went wrong");
-      throw error; // Important: Re-throw error to handle it properly in component
+        console.log(error);
     }
   }
 );

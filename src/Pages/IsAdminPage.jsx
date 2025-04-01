@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-function Denied(){
+function IsAdmin(){
 
     const navigate = useNavigate();
     // use to go back to previous page
@@ -14,7 +14,7 @@ function Denied(){
           <div className="absolute px-2 text-sm text-white bg-black rounded rotate-12">
             Access Denied
           </div>
-          <button className="mt-5" onClick={() => navigate('/auth/signin')}>
+          <button className="mt-5" onClick={() => navigate(-1)}>
             <a className="relative inline-block text-sm font-medium text-[#fff] group active:text-yellow-500 focus:outline-none focus:ring">
               <span className="absolute inset-0 transition-transform translate-x-0.5 translate-y-0.5 bg-[#EAB308] group-hover:translate-y-0 group-hover:translate-x-0" />
   
@@ -22,7 +22,7 @@ function Denied(){
                   
                   className="relative block px-8 py-3 bg-[#EAB308] border border-current"
               >
-                Please Login First !
+                Access Denied! You're not an Seller
               </span>
             </a>
           </button>
@@ -31,4 +31,4 @@ function Denied(){
     )
 }
 
-export default Denied;
+export default IsAdmin;

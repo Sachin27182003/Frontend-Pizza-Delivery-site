@@ -11,6 +11,7 @@ import CartDetails from './Pages/Cart/CartDetails';
 import Order from './Pages/Order/Order';
 import OrderSuccess from './Pages/Order/OrderSuccess';
 import RequireAuth from './Components/Auth/RequireAuth';
+import IsAdmin from './Pages/IsAdminPage';
 
 function App() {
 
@@ -24,7 +25,11 @@ function App() {
 
       <Route path='/order' element={<Order/>} />
       <Route path='/order/success' element={<OrderSuccess/>} />
+
+      <Route element={<IsAdmin/>}>
       <Route path='/admin/addProduct' element={<AddProduct/>} />
+      </Route>
+
       <Route path='/product/:productId' element={<ProductDetails />} />
       <Route path='/cart' element={<CartDetails/>} />
 
