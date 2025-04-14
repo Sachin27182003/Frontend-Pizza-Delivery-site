@@ -11,7 +11,7 @@ import { lazy, useEffect, useState } from "react";
 import { getAllProducts } from "../Redux/Slices/ProductSlice";
 import { Link } from "react-router-dom";
 import { getAllProductFromCarts } from "../Redux/Slices/CartSlice";
-import Chatbot from "../Chatbot/chatbot";
+import Chatbot from "../Chatbot/Chatbot";
 import { fetchOrders } from "../Redux/Slices/OrderSlice";
 
 function Home() {
