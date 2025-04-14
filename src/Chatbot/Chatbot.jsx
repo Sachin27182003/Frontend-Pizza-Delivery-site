@@ -152,7 +152,12 @@ function Chatbot() {
                 )}
 
                 <p className="mb-2 mt-2 font-medium">Previous Orders</p>
-                {[...notActiveOrders].reverse().map((order) => (
+                {notActiveOrders.length === 0 ? (
+                  <div className="text-center">
+                    <p>No Previous orders found</p>
+                  </div>
+                ) : (
+                [...notActiveOrders].reverse().map((order) => (
                   <button
                     key={order._id}
                     onClick={() => {
@@ -187,7 +192,8 @@ function Chatbot() {
                       </div>
                     </div>
                   </button>
-                ))}
+                ))
+                )}
                 <button
                   onClick={() => setStep("start")}
                   className="w-full mb-2 p-2 border rounded hover:bg-orange-200"
