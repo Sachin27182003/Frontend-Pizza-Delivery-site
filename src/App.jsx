@@ -5,19 +5,26 @@ import Signup from './Pages/Auth/Signup';
 import Signin from './Pages/Auth/Signin';
 import NotFound from './Pages/NotFound';
 import AddProduct from './Pages/Admin/AddProduct';
-import Denied from './Pages/Denied';
 import ProductDetails from './Pages/Products/ProductDetails';
 import CartDetails from './Pages/Cart/CartDetails';
 import Order from './Pages/Order/Order';
 import OrderSuccess from './Pages/Order/OrderSuccess';
 import RequireAuth from './Components/Auth/RequireAuth';
-import IsAdmin from './Pages/IsAdminPage';
+import { useEffect } from 'react';
+import RequireAdmin from './Components/Auth/RequireAdmin';
+import MyOrders from './Pages/Order/MyOrders';
+import AllProducts from './Pages/Products/AllProducts';
 
 function App() {
+
+  useEffect(() => {
+    document.title = "Project-Pizza Site"; // Set dynamic title
+  }, []);
 
   return (
     <Routes>
       <Route path="/" element={<Home/>} />
+
       <Route path='/auth/Signup' element={<Signup/>} />
       <Route path='/auth/Signin' element={<Signin/>} />
 
@@ -25,14 +32,15 @@ function App() {
 
       <Route path='/order' element={<Order/>} />
       <Route path='/order/success' element={<OrderSuccess/>} />
-
-      <Route element={<IsAdmin/>}>
-      <Route path='/admin/addProduct' element={<AddProduct/>} />
-      </Route>
+      <Route path='/products' element={<AllProducts/>} />
 
       <Route path='/product/:productId' element={<ProductDetails />} />
       <Route path='/cart' element={<CartDetails/>} />
+      <Route path='/myorders' element={<MyOrders/>} />
+      </Route>
 
+      <Route element={<RequireAdmin/>}>
+      <Route path='/admin/addProduct' element={<AddProduct/>} />
       </Route>
       
 

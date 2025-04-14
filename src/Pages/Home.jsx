@@ -11,6 +11,8 @@ import { lazy, useEffect, useState } from "react";
 import { getAllProducts } from "../Redux/Slices/ProductSlice";
 import { Link } from "react-router-dom";
 import { getAllProductFromCarts } from "../Redux/Slices/CartSlice";
+import Chatbot from "../Chatbot/chatbot";
+import { fetchOrders } from "../Redux/Slices/OrderSlice";
 
 function Home() {
   const dispatch = useDispatch();
@@ -35,10 +37,12 @@ function Home() {
   useEffect(() => {
     dispatch(getAllProducts(count));
     dispatch(getAllProductFromCarts());
+    dispatch(fetchOrders());
   }, [count]);
 
   return (
     <Layout>
+      <Chatbot/>
       <div>
         {/* Hero Section */}
         <section className="flex flex-col-reverse items-center justify-center py-5 md:flex-row md:gap-7 bg-gradient-to-r from-amber-50 to-orange-300">
@@ -170,12 +174,11 @@ function Home() {
           </div>
         </section>
 
-        {/* {productsData.map ((product) => <div key={product._id} > {product.name}</div> ) } */}
 
         <div className="grid mx-auto  ">
           <Link to={"/products"}>
             <div className="flex mt-4 mr-4 item-center justify-end">
-              <button className="flex h-auto w-28 px-4 py-2 text-white bg-orange-500 rounded-md hover:bg-orange-600 group">
+              <button  className="flex h-auto w-28 px-4 py-2 text-white bg-orange-500 rounded-md hover:bg-orange-600 group">
                 view all
                 <span className="inline-block ml-2 transition-transform ease-in-out group-hover:translate-x-2">
                   <ArrowRightLongLine />

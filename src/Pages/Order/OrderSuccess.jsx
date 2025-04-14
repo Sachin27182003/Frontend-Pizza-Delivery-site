@@ -19,13 +19,21 @@ function OrderSuccess(){
                 <p className="text-lg font-semibold">
                     Your order has been placed successfully
                 </p>
-
-                <button
-                    onClick={() => navigate('/')}
-                    className="bg-yellow-500 text-white px-4 py-2 rounded mt-4"
-                >
-                    Go Back Home
-                </button>
+                <div>
+                    <button
+                        onClick={() => navigate('/')}
+                        className="bg-yellow-500 text-white px-4 py-2 rounded mt-4 mr-5"
+                    >
+                        Go to Homepage
+                    </button>
+                    <button
+                        onClick={() => navigate('/myorders')}
+                        className="bg-yellow-500 text-white px-4 py-2 rounded mt-4"
+                    >
+                        Check Order Status!
+                    </button>
+                </div>
+                
             </div>
 
         </Layout>

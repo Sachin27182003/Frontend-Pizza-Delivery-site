@@ -31,8 +31,7 @@ export const addProductToCart = createAsyncThunk(
 );
 
 export const removeProductFromCart = createAsyncThunk(
-  "/cart/removeProductFromCart",
-  async (productId) => {
+  "/cart/removeProductFromCart", async (productId) => {
     try {
       const products = axiosInstance.post(`/carts/remove/${productId}`);
       toast.promise(products, {

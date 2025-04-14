@@ -13,7 +13,7 @@ function Order() {
     const {cartsData} = useSelector((state) => state.cart);
 
     const [details, setDetails] = useState({
-        paymentMethod: 'OFFLINE',
+        paymentMethod: 'COD',
         address: ''
     });
 
@@ -35,15 +35,13 @@ function Order() {
         //     return;
         // }
 
-        const response = await dispatch(placeOrder());
+        const response = await dispatch(placeOrder(details));
 
         console.log("orderResponse", response);
 
         if(response?.payload?.data?.success){
             toast.success("Order Placed Successfully");
             navigate('/order/success');
-        } else {
-            toast.error("Something went wrong, please try again");
         }
     }
 
@@ -74,17 +72,20 @@ function Order() {
 
                     <form onSubmit={(e) => handleFormSubmit(e)}>
                         <div className="grid relative flex-grow w-full ">
-                            <label htmlFor="PaymentMethod" className="text-xl leading-7 text-gray-600 mb-2">
+                            <label htmlFor="paymentMethod" className="text-xl leading-7 text-gray-600 mb-2">
                                 Payment Method
                             </label>
                             <select 
-                                name="PaymentMethod"
+                                name="paymentMethod"
                                 required
                                 onChange={handleUserInput}
                                 className="p-2 border rounded-md focus:outline-none focus:border-primary-500 bg-white text-gray-700"
                             >
-                                <option value="OFFLINE">Offline</option>
-                                <option value="ONLINE">Online</option>  
+                                <option value="COD">Cash On Delivery</option>
+                                <option value="UPI">UPI </option>  
+                                <option value="INTERNET-BANKING">Internet Banking</option>  
+                                <option value="CARD">Card</option>  
+                                <option value="WALLET">Wallet</option>  
                             </select>
                         </div>
 
@@ -94,6 +95,7 @@ function Order() {
                             </label>
                             <textarea
                                 name="address"
+                                minLength={10}
                                 required
                                 onChange={handleUserInput}
                                 className="w-full p-2 border rounded-md focus:outline-none focus:border-primary-500 bg-white text-gray-700"

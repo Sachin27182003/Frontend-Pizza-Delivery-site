@@ -14,7 +14,6 @@ function ProductDetails() {
 
   async function fetchProductDetails() {
     const details = await dispatch(getProductDetails(productId));
-    console.log(details?.payload?.data);
     setProductDetails(details?.payload?.data);
   }
   
@@ -166,7 +165,7 @@ function ProductDetails() {
                     className="flex px-6 py-2 ml-auto text-white bg-yellow-500 border-0 rounded focus:outline-none hover:bg-yellow-600"
                     onClick={handleCart}
                   >
-                    Add to Cart
+                    Add to Cart 
                   </button>
                 )}
               </div>
