@@ -1,11 +1,65 @@
-# React + Vite
+# 🍕 Pizza Delivery Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-stack pizza ordering platform with user-friendly features, real-time order tracking, admin controls, and a chatbot interface — built for both customers and sellers.
 
-Currently, two official plugins are available:
+## 🚀 Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🔗 Visit Website :- https://deliverpizzasite.netlify.app/  
 
-This is Just Frontend If you want to get backend Just go to "https://github.com/Sachin27182003/Pizza-Delivery-site" 
-Thank youu !
+---
+
+## 📌 Features
+
+### 🧑‍🍳 For Customers:
+- Browse & filter pizzas
+- Add items to cart & place orders
+- Secure login/signup with authentication
+- Real-time order tracking via chatbot
+- View active & past orders
+
+### 🛠️ For Admins:
+- Admin login & dashboard
+- Add, edit, or remove pizzas
+- Manage orders and delivery status
+- View all customer orders and details
+
+### 🤖 Chatbot:
+- Integrated chatbot for:
+  - Order status tracking
+  - Address updates
+  - Canceling orders
+  - Viewing previous orders
+
+---
+
+## 🧰 Tech Stack
+
+### 🖥️ Frontend:
+- React / Next.js
+- Tailwind CSS
+- Axios / Fetch API
+
+### 🧠 Backend:
+- Node.js / Express.js (or FastAPI if you're using Python)
+- MongoDB (with Mongoose)
+
+### 📦 Other Integrations:
+- **Cloudinary** – For pizza image upload/storage
+- **JWT/Cookies** – For user session management
+- **Chatbot Logic** – For interacting with user orders
+
+
+---
+
+Let me know if you'd like me to:
+- Turn this into a **PDF** or submission format
+- Help you add screenshots or a hosted live demo
+- Write a short **pitch paragraph** to go along with it
+
+You're doing great, and this project will definitely make a strong impression! 🚀
+
+
+---
+
+## 🔧 Project Structure
+
