@@ -5,7 +5,8 @@ A full-stack pizza ordering platform with user-friendly features, real-time orde
 ## 🚀 Live Demo
 
 🔗 Visit Website :- https://deliverpizzasite.netlify.app/  
-
+🔗 Github link for Frontend :- https://github.com/Sachin27182003/Frontend-Pizza-Delivery-site
+🔗 Github link for Backend :- https://github.com/Sachin27182003/Pizza-Delivery-site
 ---
 
 ## 📌 Features
